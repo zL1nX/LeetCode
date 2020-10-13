@@ -24,6 +24,7 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
+// 四指针法，注意dummyHead的定义
 ListNode* swapPairs(ListNode* head) 
 {
     ListNode *h = new ListNode(-1);
