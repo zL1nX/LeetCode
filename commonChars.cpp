@@ -21,32 +21,62 @@
 #include <map>
 using namespace std;
 
+// vector<string> commonChars(vector<string>& A) 
+// {
+//     map<char, int> times;
+//     vector<string> res;
+//     for(string s : A)
+//     {
+//         for(int i = 0; i < s.size(); i ++)
+//         {
+//             if(times.count(s[i]))
+//             {
+//                 times[s[i]]++;
+//             }
+//             else
+//             {
+//                 times.insert(pair<char, int>(s[i], 0));
+//             }   
+//         }
+//     }
+//     for(auto it : times)
+//     {
+//         for(int i = 0; i < it.second;i++)
+//         {
+//             string r(1, it.first);
+//             res.push_back(r);
+//         }
+            
+//     }
+//     return res;
+// }
+
 vector<string> commonChars(vector<string>& A) 
 {
-    map<char, int> times;
-    vector<string> res;
-    for(string s : A)
+    int res[26] = { 0 };
+    vector<string> result;
+    for(char c : A[0])
     {
-        for(int i = 0; i < s.size(); i ++)
+        res[c - 'a']++;
+    }
+    for(int i = 1; i < A.size(); i ++)
+    {
+        int chs[26] = { 0 };
+        for(char c : A[i])
         {
-            if(times.count(s[i]))
-            {
-                times[s[i]]++;
-            }
-            else
-            {
-                times.insert(pair<char, int>(s[i], 0));
-            }   
+            chs[c - 'a']++;
+        }
+        for(int i = 0; i < 26; i++)
+        {
+            res[i] = min(res[i], chs[i]);
         }
     }
-    for(auto it : times)
+    for(int i = 0; i < 26; i ++)
     {
-        for(int i = 0; i < it.second;i++)
+        for(int k = 0; k < res[i];k++)
         {
-            string r(1, it.first);
-            res.push_back(r);
+            result.push_back(string(1, i + 'a'));
         }
-            
     }
-    return res;
+    return result;
 }
