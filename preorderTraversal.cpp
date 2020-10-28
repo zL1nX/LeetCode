@@ -42,3 +42,5 @@ vector<int> preorderTraversal(TreeNode* root)
     traverse(root);
     return nodes;
 }
+
+// morris 遍历或者递归的方法也能实现
