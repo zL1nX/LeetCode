@@ -35,16 +35,19 @@ using namespace std;
 
 int countGoodTriplets(vector<int>& arr, int a, int b, int c) 
 {
-    // for(int i = 1; i < arr.size() - 1; i ++)
-    // {
-    //     for(int j = 0; j < i ;j ++)
-    //     {
-    //         if(abs(arr[j] - arr[i])<=a) left_fit ++;
-    //     }
-    //     for(int k = i + 1; k < arr.size(); k++)
-    //     {
-    //         if(abs(arr[k] - arr[i]<=b)) right_fit ++;
-    //     }
-
-    // }
+    int cnt = 0;
+    for(int i = 0;i < arr.size(); i++)
+    {
+        for(int j = i + 1; j < arr.size(); j ++)
+        {
+            for(int k = j + 1; k < arr.size(); k++)
+            {
+                if(abs(arr[i] - arr[j]) <= a && abs(arr[j] - arr[k]) <= b && abs(arr[k] - arr[i]) <= c)
+                {
+                    cnt ++;
+                }
+            }
+        }
+    }
+    return cnt; 
 }
