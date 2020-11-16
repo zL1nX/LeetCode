@@ -40,3 +40,5 @@ vector<vector<int>> reconstructQueue(vector<vector<int>>& people)
     }
     return res;
 }
+// 因为是恢复合法队列，因此目标队列必然蕴含着排列的某种合法性，这种合法性就是以前面高个子的数量作为排序的依据。
+// 所以在排序时就应该以这种身高和数量之间的联系去排列
