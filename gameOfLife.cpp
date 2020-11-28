@@ -40,8 +40,9 @@
 */
 #include <vector>
 using namespace std;
-int countLive(const vector<vector<int>>& board, int i , int j)
+int countLive(const vector<vector<int>>& board, int row , int col)
 {
+    int i = row + 1, j = col + 1;
     return board[i][j - 1] + board[i - 1][j] + board[i - 1][j - 1] + 
                 board[i - 1][j + 1] + board[i][j + 1] + 
                 board[i + 1][j + 1]+ board[i + 1][j] + board[i + 1][j - 1];
@@ -49,8 +50,7 @@ int countLive(const vector<vector<int>>& board, int i , int j)
 
 void gameOfLife(vector<vector<int>>& board) 
 {
-    //vector<vector<int>> newBoard(board.size(), vector(board[0].size(), 0));
-    vector<vector<int>> expandBoard(board.size() + 2, vector(board.size() + 2, 0));
+    vector<vector<int>> expandBoard(board.size() + 2, vector<int>(board[0].size() + 2, 0));
     for(int i = 0; i < board.size(); i ++)
     {
         for(int j = 0; j < board[i].size(); j ++)
@@ -58,6 +58,15 @@ void gameOfLife(vector<vector<int>>& board)
             expandBoard[i + 1][j + 1] = board[i][j];
         }
     }
+    for(vector<int> i : expandBoard)
+    {
+        for(int j : i)
+        {
+            printf("%d ", j);
+        }
+        printf("\n");
+    }
+    printf("\n");
 
     for(int i = 0; i < board.size(); i ++)
     {
