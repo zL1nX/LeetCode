@@ -54,6 +54,5 @@ vector<int> searchRange(vector<int>& nums, int target)
         return {-1, -1};
     }
     return {start, end};
-    
 }
 // 也可用二分查找求解，但不如这种简单
