@@ -31,14 +31,18 @@ using namespace std;
 
 bool containsDuplicate(vector<int>& nums) 
 {
+    if(nums.size() <= 1)
+    {
+        return false;
+    }
     unordered_map<int, int> record;
     for(int i = 0; i < nums.size(); i ++)
     {
-        if(record[i])
+        if(record[nums[i]])
         {
-            return false;
+            return true;
         }
-        record[i]++;
+        record[nums[i]]++;
     }
-    return true;
+    return false;
 }
