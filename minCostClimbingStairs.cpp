@@ -37,7 +37,7 @@ int minCostClimbingStairs(vector<int>& cost)
     {
         if(i == cost.size() - 2)
         {
-            finalCost[i] += cost[i] + cost[i + 1];
+            finalCost[i] += cost[i];
             continue;
         }
         finalCost[i] += cost[i] + min(finalCost[i + 1], finalCost[i + 2]);
