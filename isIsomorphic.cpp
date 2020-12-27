@@ -45,3 +45,5 @@ bool isIsomorphic(string s, string t)
     }
     return true;
 }
+
+// 本质上就是通过哈希表构建双射关系
