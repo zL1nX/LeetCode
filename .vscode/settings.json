@@ -4,6 +4,16 @@
         "algorithm": "cpp",
         "iosfwd": "cpp",
         "map": "cpp",
-        "iterator": "cpp"
-    }
+        "iterator": "cpp",
+        "unordered_map": "cpp",
+        "ios": "cpp",
+        "utility": "cpp",
+        "queue": "cpp",
+        "string": "cpp",
+        "__split_buffer": "cpp",
+        "deque": "cpp",
+        "__hash_table": "cpp"
+    },
+    "python.pythonPath": "/Users/zhangxiaolin/opt/anaconda3/bin/python",
+    "jupyter.jupyterServerType": "local"
 }
