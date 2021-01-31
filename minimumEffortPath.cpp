@@ -60,7 +60,7 @@ public:
             father[i] = i; 
             rank_num[i] = 1;
         }
-        num_count = 1;
+        num_count = n;
     }
 
     int Find(int x)
