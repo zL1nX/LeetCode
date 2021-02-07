@@ -52,5 +52,4 @@ bool checkPossibility(vector<int>& nums)
         }
     }
     return cnt <= 1;
-    
 }

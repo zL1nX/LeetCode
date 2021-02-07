@@ -30,7 +30,7 @@ struct TreeNode {
     TreeNode (int n): val(n), left(nullptr), right(nullptr){}
 };
 
-int traverse(TreeNode* node, int& depth)
+int traverse(TreeNode* node)
 {
     if(node == nullptr)
     {
