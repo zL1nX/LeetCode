@@ -23,6 +23,10 @@
 链接：https://leetcode-cn.com/problems/er-cha-shu-de-shen-du-lcof
 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
 */
+
+#include <queue>
+using namespace std;
+
 struct TreeNode {
     int val;
     TreeNode *left;
@@ -46,5 +50,30 @@ int maxDepth(TreeNode* root)
         return 0;
     }
     int depth = traverse(root);
+    return depth;
+}
+
+int maxDepth(TreeNode* root) 
+{
+    if(root == nullptr)
+    {
+        return 0;
+    }
+    queue<TreeNode*> Q;
+    Q.push(root);
+    int depth = 0;
+    while(!Q.empty())
+    {
+        int size = Q.size();
+        while(size > 0)
+        {
+            TreeNode* node = Q.front();
+            Q.pop();
+            size -= 1; // 一个父节点被遗弃了
+            if(node->left) Q.push(node->left); // 每次把这一层的下面的节点放进来
+            if(node->right) Q.push(node->right);
+        }
+        depth += 1; // 这层的父节点都被遗弃后，层数++
+    }
     return depth;
 }
