@@ -121,3 +121,5 @@ bool isValidSerialization(string preorder)
 // 就说明这个树是不正确的，此外我们不用关心非空节点的值具体是多少
 
 // 因此可以用一个槽位的概念来动态维护这样的一个依赖关系
+
+// 妙啊
