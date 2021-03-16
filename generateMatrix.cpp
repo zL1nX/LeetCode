@@ -18,29 +18,56 @@
 #include <vector>
 using namespace std;
 
+// vector<vector<int>> generateMatrix(int n) 
+// {
+//     vector<vector<int>> mat(n, vector<int>(n, 0));
+//     int num = 1, i = 0;
+//     while(num <= n * n )
+//     {
+//         for(int j = i; j < n - i; j++)
+//         {
+//             mat[i][j] = num++;
+//         }
+//         for(int j = i + 1; j < n - i;j++)
+//         {
+//             mat[j][n - i - 1] = num++;
+//         }
+//         for(int j = n - i - 2; j >= i; j--)
+//         {
+//             mat[n - i - 1][j] = num++;
+//         }
+//         for(int j = n - i - 2; j > i; j--)
+//         {
+//             mat[j][i] = num++;
+//         }
+//         i ++;
+//     }
+//     return mat;
+// }
+
 vector<vector<int>> generateMatrix(int n) 
 {
     vector<vector<int>> mat(n, vector<int>(n, 0));
-    int num = 1, i = 0;
-    while(num <= n * n )
+    int i = 0, num = 1;
+    while(num <= n * n)
     {
         for(int j = i; j < n - i; j++)
         {
             mat[i][j] = num++;
         }
-        for(int j = i + 1; j < n - i;j++)
+        for(int j = i + 1; j < n - i; j++) // 注意这里的+1
         {
             mat[j][n - i - 1] = num++;
         }
-        for(int j = n - i - 2; j >= i; j--)
+        for(int j = n - i - 2; j >= i; j--) // 注意这里的-2
         {
             mat[n - i - 1][j] = num++;
         }
-        for(int j = n - i - 2; j > i; j--)
+        for(int j = n - i - 2; j > i; j--) // 注意这里的下界，不取等
         {
             mat[j][i] = num++;
         }
-        i ++;
+        i++;
     }
     return mat;
 }
