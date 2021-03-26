@@ -57,3 +57,5 @@ ListNode* deleteDuplicates(ListNode* head)
     }
     return head;
 }
+
+// 这道题和昨天的不一样之处在于 这道题要保留一个，昨天无需保留；如果保留的话，可以直接指向当前节点然后改变next即可；但如果删除的话，则需要准备pre节点保存上一个节点
