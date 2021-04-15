@@ -55,5 +55,5 @@ int rob1(vector<int>& nums, int start, int end)
         preVal = max(preVal, prepreVal + nums[i]); // n - 1 to n
         prepreVal = temp; // n - 2 to n - 1
     }
-    return maxVal;
+    return preVal;
 }
