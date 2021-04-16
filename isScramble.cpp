@@ -62,7 +62,7 @@ bool isScramble2(string s1, string s2)
         return false;
     }
     // dp[i][j][len] 表示从S1的i位置开始len长的子串能否扰乱成 S2的j位置开始长度为len的串
-    bool ***dp = new bool **[n];
+    bool ***dp = new bool **[n]; // 注意这个初始化的方式，可能面试会考到
     for(int i= 0; i < n; i++)
     {
         dp[i] = new bool *[n];
@@ -73,34 +73,38 @@ bool isScramble2(string s1, string s2)
         }
     }
 
-    for(int len = 2; len <= n; len ++)
+    for(int len = 2; len <= n; len ++) // 对划分的长度进行遍历，就是说看在0-len这个范围内考察两个串是否能扰动形成，然后上界就是n，因为len=1时已经存过了（即单字符，所以从2开始）
     {
-        for(int i = 0; i <= n - len; i++)
+        for(int i = 0; i <= n - len; i++) // 限定S1串的考察范围，直到n
         {
-            for(int j = 0; j <= n - len; j++)
+            for(int j = 0; j <= n - len; j++) // 限定S2串的考察范围，直到n
             {
-                for(int k = 1; k <= len - 1; k++)
+                for(int k = 1; k <= len - 1; k++) // 对划分位置进行遍历，即在len长的那部分里面，对分割位置进行遍历，所以上界是len - 1.
                 {
-                    if(dp[i][j][k] && dp[i + k][j + k][len - k])
+                    if(dp[i][j][k] && dp[i + k][j + k][len - k]) // S1-1能变成S2-1，S1-2能变成S2-2，即0-k，k+1——len-k
                     {
-                        dp[i][j][len] = true;
+                        dp[i][j][len] = true; // 表示当前考察范围内的串之间确实存在一种扰乱方式（存在即可），因此可以继续扩大串的考察范围
                         break;
                     }
                     
-                    if(dp[i][j + len - k][k] && dp[i + k][j][len - k])
+                    // 下面这个相当于把上面的扰乱情况颠倒了一下
+                    if(dp[i][j + len - k][k] && dp[i + k][j][len - k]) // S1-1能变成S2-2（即0-k能变成len-k开始的k字符），S1-2能变成S2-1（即k开始的len-k个字符，能变成0——len-k个字符）
                     {
-                        dp[i][j][len] = true;
+                        dp[i][j][len] = true; // 同理
                         break;
                     }
                 }
             }
         }
     }
-    return dp[0][0][n];
+    return dp[0][0][n]; // 最后返回这个最终的全局结果
 
 }
 
+// 核心在于敢假设一个三维的动态规划，并且能考虑到怎么遍历和表示
 
+
+// 题解代码
 
 /*
         int n = s1.length();
