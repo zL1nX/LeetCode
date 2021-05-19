@@ -78,3 +78,13 @@ int kthLargestValue(vector<vector<int>>& matrix, int k)
 // 二维前缀和问题
 
 // 直接模拟就好
+
+// 但其实有一种简洁的写法，就是只管自己这片的
+
+/*for (int i = 1; i <= m; ++i) {
+            for (int j = 1; j <= n; ++j) {
+                pre[i][j] = pre[i - 1][j] ^ pre[i][j - 1] ^ pre[i - 1][j - 1] ^ matrix[i - 1][j - 1];
+                results.push_back(pre[i][j]);
+            }
+        }
+*/
