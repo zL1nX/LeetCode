@@ -110,7 +110,11 @@ vector<int> maximizeXor(vector<int>& nums, vector<vector<int>>& queries)
     return res;
 }
 
-// 本题与之前的findMaximumXOR.cpp非常像，一个主要目的都是寻找
+// 本题与之前的findMaximumXOR.cpp非常像，一个主要目的都是寻找某个元素在数组中的最大异或值
+
+// 本题中有了个不超过mi的限制，这一限制通过预排序可实现
+
+// 此外，字典树的写法以及使用（this取当前节点，children或左右子树的区别，结果相加（使用异或）等）
 
 /**class Trie {
 public:
