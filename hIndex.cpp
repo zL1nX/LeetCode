@@ -45,3 +45,7 @@ int hIndex(vector<int>& citations)
 // 那么排序后，从后往前倒序寻找即可
 
 // 有点奇怪有点妙
+
+// 本质在求这个 citations[i]>=(len-i)，注意这个排序后的len - i，有点意思，其实就是hindex 的本质
+
+// 大的地方拉的越长，说明hindex越高
