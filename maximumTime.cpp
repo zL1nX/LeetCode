@@ -43,7 +43,14 @@ string maximumTime(string time)
     // hours max
     if(hours[0] == '?')
     {
-        hours[0] == '2';
+        if(hours[1] == '?' || hours[1] <= '3')
+        {
+            hours[0] = '2';
+        }
+        else
+        {
+            hours[0] = '1';
+        }
     }
     if(hours[1] == '?')
     {
@@ -51,7 +58,7 @@ string maximumTime(string time)
     }
     if(minutes[0] == '?')
     {
-        minutes[0] == '5';
+        minutes[0] = '5';
     }
     if(minutes[1] == '?')
     {
