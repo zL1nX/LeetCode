@@ -60,7 +60,7 @@ bool isCovered(vector<vector<int>>& ranges, int left, int right)
     for(int num = left; num <= right; num ++)
     {
         bool flag = false;
-        for(auto& range : merged)
+        for(auto& range : ranges)
         {
             if(range[0] <= num && range[1] >= num)
             {
