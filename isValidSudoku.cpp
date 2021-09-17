@@ -60,14 +60,14 @@ bool isValidSudoku(vector<vector<char>>& board)
 {
     int n = 9;
     vector<vector<bool>> row(n, vector<bool>(n, false)), col(n, vector<bool>(n, false));
-    vector<vector<bool>> block(n, vector<bool>(n, false)); // 
+    vector<vector<bool>> block(n, vector<bool>(n, false)); // 每个3x3的块里是否全都充满了
     for(int i = 0; i < n; i++)
     {
         for(int j = 0; j < n; j++)
         {
             if(board[i][j] != '.')
             {
-                int loc = i / 3 * 3 + (j / 3), num = board[i][j] - '1';// 
+                int loc = i / 3 * 3 + (j / 3), num = board[i][j] - '1';// 注意这里块号的推导 
                 if(row[i][num] || col[j][num] || block[loc][num])
                 {
                     return false;
@@ -85,6 +85,8 @@ bool isValidSudoku(vector<vector<char>>& board)
     return true;
 }
 
-// 用三个哈希表解决问题，并不用单纯从board的角度考虑问题
+// 用三个哈希表解决问题（行哈希表，列哈希表，块哈希表），并不用单纯从board的角度考虑问题
 
 // 这种写法挺巧妙的，但也是充分利用了题目中这种只能出现一次的要求
+
+// 构造还是挺巧妙的，值得多想想
