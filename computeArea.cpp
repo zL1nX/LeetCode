@@ -32,17 +32,17 @@
 
 using namespace std;
 
-int computeArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) 
-{
-    int spec1 = (ax2 - ax1) * (ay2 - ay1), spec2 = (bx2 - bx1) * (by2 - by1);
-    if((ax2 <= bx1) || ( ax1 >= bx2) || (ay1 >= by2) || (ay2 <= by1))
-    {
-        return spec1 + spec2;
-    }
-    int topx = min(ax2, bx2), bottomx = max(ax1, bx1);
-    int topy = min(ay2, by2), bottomy = max(ay1, by1); 
-    return spec1 + spec2 - abs(topy - bottomy) * abs(topx - bottomx);
-}
+// int computeArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) 
+// {
+//     int spec1 = (ax2 - ax1) * (ay2 - ay1), spec2 = (bx2 - bx1) * (by2 - by1);
+//     if((ax2 <= bx1) || ( ax1 >= bx2) || (ay1 >= by2) || (ay2 <= by1))
+//     {
+//         return spec1 + spec2;
+//     }
+//     int topx = min(ax2, bx2), bottomx = max(ax1, bx1);
+//     int topy = min(ay2, by2), bottomy = max(ay1, by1); 
+//     return spec1 + spec2 - abs(topy - bottomy) * abs(topx - bottomx);
+// }
 
  // 乍一看挺吓人，实际上并不难
 
