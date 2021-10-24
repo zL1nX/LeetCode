@@ -38,4 +38,4 @@ vector<int> constructRectangle(int area)
     return {area, 1};
 }
 
-// 直接写，从平方根开始遍历
+// 直接写，从平方根开始遍历即可
