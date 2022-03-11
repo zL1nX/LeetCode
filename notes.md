@@ -6,4 +6,5 @@
   - 递归的美妙写法，`reverse(head->next)`
 - 876链表的中间结点 [middleNode.cpp](./middleNode.cpp)
   - 每次快指针比慢指针多走一步，慢指针就自然到中间了
-- 
+- 面试题02.01.移除重复节点 [removeDuplicateNodes](./removeDuplicateNodes.cpp)
+  - 删除节点 + 哈希表，这两个东西结合一下，会产生很多容易写错的细节，多注意一些
