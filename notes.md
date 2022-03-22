@@ -20,6 +20,7 @@
   - 单纯的单链表节点删除, 注意dummy节点的设置以及删除完后直接break
 - 面试题02.06 回文链表 [isPalindrome](./isPalindromeList.cpp)
   - 链表也能后序遍历？能后序遍历就能实现回文（在递归中left向后走，right每层递归结束都会向前）。非常妙
+  - **相同题目**: [JZOfferII027-回文链表](./isPalindromeList2.cpp) (注意递归return的条件)
 - 剑指Offer 06. 从尾到头打印链表 [reversePrint](./reversePrint.cpp)
   - 链表的后序遍历（递归法），就是上面那道题的简化版
 - 面试题 02.07. 链表相交 [getIntersectionNode](./getIntersectionNode3.cpp)
