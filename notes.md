@@ -27,4 +27,7 @@
   - 经典的相交链表问题, 当一个指针走完自己的链表时,让它去遍历另外的链表,这相当于对两条链表的不同部分取并集. 非常经典的思路
   - **相同题目**: [JZOfferII023-两个链表的第一个重合节点](./getIntersectionNode4.cpp) (注意**如果没有相交节点时要返回null时**该怎么办)
 - 剑指Offer 25-合并两个排序的链表 [mergeTwoLists](./mergeTwoLists.cpp)
-  - 一个while循环 + 两个if判断; 关键在于新链表指针每次都是`cur->next`去操作,cur只用移到`cur->next`即可,省去了空节点的麻烦
+  - 一个while循环 + 两个if判断; 关键在于新链表指针每次都是`cur->next`去操作,cur只用移到`cur->next`即可,省去了空节点的麻烦. 最开始cur就是dummy自己
+  - **相同题目**: [21-合并两个有序链表](./mergeTwoLists2.cpp)
+  - **相似题目** 
+    - [23-合并K个升序链表](./mergeKLists.cpp), 优先队列中初始放入所有的头节点, 自己只完成指针的移动即可
