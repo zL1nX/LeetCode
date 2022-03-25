@@ -5,6 +5,11 @@
 - 206反转链表 [reverseList.cpp](./reverseList.cpp)
   - 递归的美妙写法，`reverse(head->next)`, node->next成了最后一个节点, 注意reverse函数的定义
   - **相同题目**: [JZOffer24-反转链表](./reverseList2.cpp), [JZOffer24II-反转链表](./reverseList3.cpp)
+  - **相似题目**: [92-反转链表 II](./reverseBetween2.cpp), firstNode节点的定义, 以及先反转前N个节点(比较烧脑的递归)
+
+> 注意: 递归虽然代码非常美妙, 理解也挺烧脑, 但效率是不如迭代的, 要真面试的话, 还是得准备一手迭代的解法
+
+
 - 876链表的中间结点 [middleNode.cpp](./middleNode.cpp)
   - 每次快指针比慢指针多走一步，慢指针就自然到中间了
 - 面试题 02.02. 返回倒数第 k 个节点 [kthToLast](./kthToLast.cpp)
