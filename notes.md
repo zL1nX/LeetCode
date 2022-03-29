@@ -32,3 +32,11 @@
   - **相同题目**: [21-合并两个有序链表](./mergeTwoLists2.cpp)
   - **相似题目** 
     - [23-合并K个升序链表](./mergeKLists.cpp), 优先队列中初始放入所有的头节点, 自己只完成指针的移动即可
+    - [61-旋转链表](./rotateRight2.cpp), `p->next=head` 以及移动的是`len-k%len`个节点, 剩余的就是节点next的拆分与更新
+- 面试题17.12-BiNode BST展开为链表 [convertBiNode](./convertBiNode.cpp)
+  - 本质是BST中序遍历 + 修改指针, 注意left指针修改时要修改当前节点而非上一个节点的.
+  - **相似题目**
+    - [114-二叉树展开为链表](./flatten2.cpp), 经典的递归定义题目, 核心在于考虑清楚单节点的处理方式, 以及需要在原地空间完成
+- 109-有序链表转换二叉搜索树 有序链表构造为BST [sortedListToBST](./sortedListToBST.cpp)
+  - 本质是BST中序遍历构造 + 二分, 递归的模板题
+- 24-两两交换链表中的节点 [swapPairs](./swapPairs2.cpp), 模拟即可, 静下心来想一下就能解决
