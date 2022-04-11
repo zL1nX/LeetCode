@@ -49,3 +49,4 @@
   - 注意: 两指针的相遇点不一定是环的起点!
   - **相同题目**: [JZOfferII022-链表中环的入口节点](./detectCycle3.cpp) (注意可能没有环的返回结构), [面试题02.08-环路检测](./detectCycle4.cpp)
 - 面试题04.03-特定深度节点链表: [面试题04.03-特定深度节点链表](./listOfDepth.cpp), BFS层序遍历的模板题目, 兼顾树和链表的结点类型
+- JZOffer35-复杂链表的复制 : [copyRandomList](./copyRandomList2.cpp) 两次遍历 + 哈希表方便新建节点 (似乎有更巧妙的方法如dfs, 拆分等)
