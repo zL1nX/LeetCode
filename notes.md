@@ -31,6 +31,7 @@
   - 一个while循环 + 两个if判断; 关键在于新链表指针每次都是`cur->next`去操作,cur只用移到`cur->next`即可,省去了空节点的麻烦. 最开始cur就是dummy自己
   - **相同题目**: [21-合并两个有序链表](./mergeTwoLists2.cpp)
   - **相似题目** 
+    - [面试题02.05-链表求和](./addTwoNumbers.cpp): 基于链表的按位加模拟过程, 记得设置进位
     - [23-合并K个升序链表](./mergeKLists.cpp), 优先队列中初始放入所有的头节点, 自己只完成指针的移动即可
     - [61-旋转链表](./rotateRight2.cpp), `p->next=head` 以及移动的是`len-k%len`个节点, 剩余的就是节点next的拆分与更新
 - 面试题17.12-BiNode BST展开为链表 [convertBiNode](./convertBiNode.cpp)
@@ -39,6 +40,7 @@
     - [114-二叉树展开为链表](./flatten2.cpp), 经典的递归定义题目, 核心在于考虑清楚单节点的处理方式, 以及需要在原地空间完成
 - 109-有序链表转换二叉搜索树 有序链表构造为BST [sortedListToBST](./sortedListToBST.cpp)
   - 本质是BST中序遍历构造 + 二分, 递归的模板题
+  - **相似题目** : [JZOffer36-二叉搜索树与双向链表](./treeToDoublyList.cpp), 直接中序遍历 + 节点的指针修改, 注意递归结束后首尾节点的处理
 - 24-两两交换链表中的节点 [swapPairs](./swapPairs2.cpp), 模拟即可, 静下心来想一下就能解决
 - 146-LRU 缓存, 经典的面试题, 双向链表 + 哈希表, 需要掌握对功能的分解, LRU的原理, (双向)链表的各种操作.
   - 因为要查找 + 时序 + 删除与插入 , 所以只能双向链表 (删除与插入) + 哈希表 (查找) , 以实现快速的时序
@@ -50,3 +52,4 @@
   - **相同题目**: [JZOfferII022-链表中环的入口节点](./detectCycle3.cpp) (注意可能没有环的返回结构), [面试题02.08-环路检测](./detectCycle4.cpp)
 - 面试题04.03-特定深度节点链表: [面试题04.03-特定深度节点链表](./listOfDepth.cpp), BFS层序遍历的模板题目, 兼顾树和链表的结点类型
 - JZOffer35-复杂链表的复制 : [copyRandomList](./copyRandomList2.cpp) 两次遍历 + 哈希表方便新建节点 (似乎有更巧妙的方法如dfs, 拆分等)
+- 面试题02.04-分割链表[partitionList](./partitionList.cpp), 一个小指针, 一个大指针, 大指针最后别忘了置空
