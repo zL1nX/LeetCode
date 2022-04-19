@@ -14,6 +14,8 @@
   - 每次快指针比慢指针多走一步，慢指针就自然到中间了
 - 面试题 02.02. 返回倒数第 k 个节点 [kthToLast](./kthToLast.cpp)
   - 和上面一道题类似,也是快慢指针,让快指针先走k步,慢指针再开始走,经典的思路
+  - **相似题目**
+    - [JZOfferII021-删除链表的倒数第 n 个结点](./removeNthFromEnd2.cpp), slow指向删的节点, 并保存一个前驱指针, 如果要删除头节点该怎么办
 - 面试题02.01.移除重复节点 [removeDuplicateNodes](./removeDuplicateNodes.cpp)
   - 删除节点 + 哈希表，这两个东西结合一下，会产生很多容易写错的细节，多注意一些
 - JZOffer18. 删除链表的节点 [deleteNode](./deleteNode3.cpp)
@@ -32,12 +34,14 @@
   - **相同题目**: [21-合并两个有序链表](./mergeTwoLists2.cpp)
   - **相似题目** 
     - [面试题02.05-链表求和](./addTwoNumbers.cpp): 基于链表的按位加模拟过程, 记得设置进位
+    - [JZOfferII025-链表中的两数相加](./addTwoNumbers2.cpp): 反向的上一题, 栈的使用 + 反向构建链表(node->next = cur)
     - [23-合并K个升序链表](./mergeKLists.cpp), 优先队列中初始放入所有的头节点, 自己只完成指针的移动即可
     - [61-旋转链表](./rotateRight2.cpp), `p->next=head` 以及移动的是`len-k%len`个节点, 剩余的就是节点next的拆分与更新
 - 面试题17.12-BiNode BST展开为链表 [convertBiNode](./convertBiNode.cpp)
   - 本质是BST中序遍历 + 修改指针, 注意left指针修改时要修改当前节点而非上一个节点的.
   - **相似题目**
     - [114-二叉树展开为链表](./flatten2.cpp), 经典的递归定义题目, 核心在于考虑清楚单节点的处理方式, 以及需要在原地空间完成
+    - [JZOfferII028-展平多级双向链表](./flattenMultiLevelNode.cpp), 同样从DFS的定义出发, 定义好lastNode后对两端进行操作即可
 - 109-有序链表转换二叉搜索树 有序链表构造为BST [sortedListToBST](./sortedListToBST.cpp)
   - 本质是BST中序遍历构造 + 二分, 递归的模板题
   - **相似题目** : [JZOffer36-二叉搜索树与双向链表](./treeToDoublyList.cpp), 直接中序遍历 + 节点的指针修改, 注意递归结束后首尾节点的处理
@@ -53,3 +57,11 @@
 - 面试题04.03-特定深度节点链表: [面试题04.03-特定深度节点链表](./listOfDepth.cpp), BFS层序遍历的模板题目, 兼顾树和链表的结点类型
 - JZOffer35-复杂链表的复制 : [copyRandomList](./copyRandomList2.cpp) 两次遍历 + 哈希表方便新建节点 (似乎有更巧妙的方法如dfs, 拆分等)
 - 面试题02.04-分割链表[partitionList](./partitionList.cpp), 一个小指针, 一个大指针, 大指针最后别忘了置空
+  - **相似题目**: 
+    - [JZOfferII026-重排链表](./reorderList2.cpp), 需要用vector来存, 然后跟交换节点很像, 记得最后的节点next置空以及left++
+
+
+## 树与二叉树
+
+- [104-二叉树的最大深度](./treemaxDepth.cpp): 有多种解法, 考虑分而治之(动规)的思想, 即左子树的最大高度和右子树的最大高度的最大值+1, 就是当前节点的最大深度
+  - 后序位置上的遍历, 非常经典的题目, 还可以直接dfs全局变量, bfs遍历等思路去做
