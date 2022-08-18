@@ -166,4 +166,8 @@
   - **dp含义**: dp[i][j]表示到位置ij的最小路径和 (即答案本身)
   - **base case**: dp[i][0] = $\sum_{0}^{i}$grid[i][0], 第一行同理 (注意: 可以**先把**第一行第一列的base case算了, 这样转移时的for循环就不用考虑边界问题了) 
   - **状态转移**: dp[i][j] = grid[i][j] + min(dp[i - 1][j], dp[i][j - 1]);, 从正上或左边的最小值转移过来
-- [174-地下城游戏](./calculateMinimumHP.cpp) todo
+- [174-地下城游戏](./calculateMinimumHP.cpp): dp的定义依然很关键, 但确实挺难想, 此外还要注意拨动时有顺时针和逆时针两种方向
+  - **dp含义**: dp[i][j] or dp(i, j) 表示指针最开始指向ring[i]处时, 最终拨出目标key[j..]的最少步数;
+  - **base case**: dp[i][len(key) - 1] = 0
+  - **状态转移**: dp[i][j] = min(dp[i][j], 1 + currentStep + dp[IndexOf(key[i])][j + 1]), 即要拨出当前这个位置的最小, 只要后面从`j+1`开始的这些字符能以最小代价拨到`key[i]`即可, 然后再算下从`key[i]`到`ring[i]`的currentStep即可
+  - 此外要注意计算currentStep时考虑顺时针和逆时针两种路径
