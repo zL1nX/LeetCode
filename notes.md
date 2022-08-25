@@ -171,3 +171,8 @@
   - **base case**: dp[i][len(key) - 1] = 0
   - **状态转移**: dp[i][j] = min(dp[i][j], 1 + currentStep + dp[IndexOf(key[i])][j + 1]), 即要拨出当前这个位置的最小, 只要后面从`j+1`开始的这些字符能以最小代价拨到`key[i]`即可, 然后再算下从`key[i]`到`ring[i]`的currentStep即可
   - 此外要注意计算currentStep时考虑顺时针和逆时针两种路径
+- [787-K 站中转内最便宜的航班](./findCheapestPrice2.cpp), 有点像最短路径或者是什么价格之类的, 只要把k步之内转化为dp的一维即可
+  - **dp含义** : dp[i][j] 表示经过i个站点到达j站的最小代价
+  - **base case** : dp[0][src] = 0
+  - **状态转移** : dp[i][to] = min(dp[i][to], dp[i - 1][all from] + cost), 即遍历所有的flights, 遍历时直接将对应的dp[i][to]更新为最小 (i是最外层循环, 表示第几个站点)
+    - 最后的结果即为 min(dp[i][dst]), i <= k + 1, 此外还要注意下dp初始值的问题 (不是INT_MAX, 否则加的时候会溢出)
