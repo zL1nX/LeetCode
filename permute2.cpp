@@ -33,17 +33,15 @@ vector<int> curr;
 vector<vector<int>> permute(vector<int>& nums) 
 {
     vector<bool> used(nums.size(), false);
-    curr.empty();
-    backtrack(nums, curr, used);
+    backtrack(nums, used);
     return res;
 }
 
-void backtrack(vector<int>& nums, vector<int>& curr, vector<bool>& used) 
+void backtrack(vector<int>& nums, vector<bool>& used) 
 {
     if(curr.size() == nums.size())
     {
         res.emplace_back(curr);
-        curr.empty();
     }
     for(int i = 0; i < nums.size(); i++)
     {
@@ -53,7 +51,7 @@ void backtrack(vector<int>& nums, vector<int>& curr, vector<bool>& used)
         }
         used[i] = true;
         curr.push_back(nums[i]);
-        backtrack(nums, curr, used);
+        backtrack(nums, used);
         used[i] = false;
         curr.pop_back();
     }
